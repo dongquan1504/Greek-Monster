@@ -2,9 +2,11 @@ import React, { Component } from "react";
 
 import CardList from "../component/cardList";
 import SearchBox from "../component/SearchBox";
-import Scroll from "../component/Scroll";
 import monsters from "../data/monsters";
 
+import Scroll from "../component/Scroll";
+// import ErrorBoundry from "../component/errorBoundry";
+import Footer from "../component/footer";
 // import logo from '../logo.svg';
 import "../assets/css/App.css";
 
@@ -51,10 +53,13 @@ class App extends Component {
         <h1 className="f1">Greek Monsters</h1>
         <SearchBox searchChange={this.onSearchChange} />
         <Scroll>
-          <div className="flex">
-            <CardList monsters={filteredMonsters} />
-          </div>
+          {/* <ErrorBoundry> */}
+            <div className="flex">
+              <CardList monsters={filteredMonsters} />
+            </div>
+          {/* </ErrorBoundry> */}
         </Scroll>
+        <Footer />
       </div>
     );
   }
